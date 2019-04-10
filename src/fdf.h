@@ -2,17 +2,10 @@
 #define FDF_H
 
 #include "../libft/libft.h"
+#include "get_next_line.h"
+#include "read_file.h"
+#include "ft_init.h"
 
-typedef struct s_point
-{
-    int x;
-    int y;
-    int z;
-}              t_point;
-
-void    stockfile(char *filename, char *line);
-char    **creategrid(int nbline, int col);
-void	displaygrid(char **grid, int nbline, int col);
-int	    char_number(char *str);
+int	ft_fdf(char *filename);
 
 #endif
