@@ -4,6 +4,7 @@
 #include <mlx.h>
 #include <math.h>
 #include "fdf.h"
+#include "fill_tab.h"
 #include "read_file.h"
 
 void	ft_init_window(t_fdf *ptr);

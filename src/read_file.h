@@ -11,6 +11,7 @@ typedef struct s_point
     int x;
     int y;
     int z;
+	int z0;
 	int x2;
 	int y2;
 }              t_point;
@@ -33,4 +34,5 @@ typedef struct s_fdf
 int	read_file(char *filename, t_fdf *ptr);
 int		get_len(char *line);
 t_point	**fill_tab(char *filename, t_fdf *ptr);
+
 #endif

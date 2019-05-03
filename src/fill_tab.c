@@ -39,6 +39,7 @@ t_point	**fill_tab(char *filename, t_fdf *ptr)
 	{
 		sstr = ft_strsplit(ptr->line, ' ');
 		ptr->tab[i] = (t_point *)malloc(sizeof(t_point) * ptr->nb_col);
+		j = 0;
 		while (sstr[j])
 		{
 			ptr->tab[i][j].x = j * ptr->size;
