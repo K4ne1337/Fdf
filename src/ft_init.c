@@ -131,7 +131,8 @@ int key_function(int keycode, t_fdf *ptr)
 		ptr->high += 5;
 		set_high(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
-		ft_switch_iso(ptr);
+		set_proj(ptr);
+		//ft_switch_iso(ptr);
 		testprint(ptr);
 	}
 	if (keycode == 65453) // 78
@@ -139,7 +140,8 @@ int key_function(int keycode, t_fdf *ptr)
 		ptr->high -= 5;
 		set_high(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
-		ft_switch_iso(ptr);
+		set_proj(ptr);
+		//ft_switch_iso(ptr);
 		testprint(ptr);
 	}
 	set_color(keycode, ptr);
@@ -173,7 +175,8 @@ void	ft_init_window(t_fdf *ptr)
 {
 	ptr->mlx_ptr = mlx_init();
 	ptr->win_ptr = mlx_new_window(ptr->mlx_ptr, ptr->res, ptr->res, "fdf");
-	ft_switch_iso(ptr);
+	//ft_switch_iso(ptr);
+	set_proj(ptr);
 	testprint(ptr);
 	mlx_key_hook(ptr->win_ptr, key_function, ptr);
 	mlx_mouse_hook(ptr->win_ptr, mouse_function, 0);

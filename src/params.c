@@ -6,11 +6,13 @@ void	set_proj(t_fdf *ptr)
 	size_t 	j;
 
 	j = 0;
-	while (j <ptr->nb_line)
+	while (j < ptr->nb_line)
 	{
 		i = 0;
 		while (i < ptr->nb_col)
 		{
+			ptr->tab[j][i].x2 = ptr->tab[j][i].x + 0.35 * ptr->tab[j][i].y;
+			ptr->tab[j][i].y2 = ptr->tab[j][i].z - 0.35 * ptr->tab[j][i].y;
 			i++;
 		}
 		j++;
