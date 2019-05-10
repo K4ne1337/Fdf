@@ -44,6 +44,7 @@ t_point	**fill_tab(char *filename, t_fdf *ptr)
 		{
 			ptr->tab[i][j].x = j * ptr->size;
 			ptr->tab[i][j].y = i * ptr->size;
+			ptr->tab[i][j].z0 = ft_atoi(sstr[j]);
 			ptr->tab[i][j].z = ft_atoi(sstr[j]) * ptr->high;
 			j++;
 		}

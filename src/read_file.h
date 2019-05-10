@@ -19,6 +19,8 @@ typedef struct s_point
 typedef struct s_fdf
 {
 	t_point	**tab;
+	int		color;
+
 	int		fd;
 	int		ret;
 	int		res;
@@ -26,6 +28,8 @@ typedef struct s_fdf
 	int		nb_line;
 	int		nb_col;
 	int		size;
+	int		moove;
+	int		up_down;
 	char	*line;
 	void	*win_ptr;
 	void	*mlx_ptr;
