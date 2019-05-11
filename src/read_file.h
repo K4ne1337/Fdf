@@ -16,6 +16,9 @@ typedef struct s_point
 	int y2;
 }              t_point;
 
+#define ISOMETRIC_PROJECTION 0
+#define PARALLEL_PROJECTION 1
+
 typedef struct s_fdf
 {
 	t_point	**tab;
@@ -23,13 +26,15 @@ typedef struct s_fdf
 
 	int		fd;
 	int		ret;
-	int		res;
+	int		res_width;
+	int		res_height;
 	int		high;
 	int		nb_line;
 	int		nb_col;
 	int		size;
-	int		moove;
-	int		up_down;
+	int		offset_x;
+	int		offset_y;
+	int		current_proj;
 	char	*line;
 	void	*win_ptr;
 	void	*mlx_ptr;

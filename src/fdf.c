@@ -7,11 +7,13 @@ int	ft_fdf(char *filename)
 	if(!(ptr = (t_fdf*)malloc(sizeof(t_fdf))))
 		return (0);
 	read_file(filename,ptr);
-	ptr->res = 800;
-	ptr->moove = 600;
-	ptr->up_down = 500;
+	ptr->res_width = 800;
+	ptr->res_height = 600;
+	ptr->offset_x = 200;
+	ptr->offset_y = 150;
 	ptr->color = 0x00FFFFFF;
-	ptr->size = ptr->res / (ptr->nb_col + ptr->nb_line);
+	ptr->current_proj = PARALLEL_PROJECTION;
+	ptr->size = ptr->res_width / (ptr->nb_col + ptr->nb_line);
 	ptr->high = 2;
 	fill_tab(filename, ptr);
 	ft_init_window(ptr);

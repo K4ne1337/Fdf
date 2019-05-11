@@ -74,7 +74,8 @@ SRC = ft_atoi.c\
 	  ft_recursive_factorial.c\
 	  ft_strrev.c\
 	  ft_intlen.c\
-	  ft_strupcase.c
+	  ft_strupcase.c\
+	  ft_sstrlen.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)

@@ -61,33 +61,33 @@ void	set_color(int keycode, t_fdf *ptr)
 	}
 }
 
-void	set_moove(int keycode, t_fdf *ptr)
+void	set_offset_x(int keycode, t_fdf *ptr)
 {
 	if (keycode == 65361) //123
 	{
-		ptr->moove -= 50;
+		ptr->offset_x += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
 	if (keycode == 65363) // 124
 	{
-		ptr->moove += 50;
+		ptr->offset_x -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
 }
 
-void	set_up_down(int keycode, t_fdf *ptr)
+void	set_offset_y(int keycode, t_fdf *ptr)
 {
 	if (keycode == 65362) //126
 	{
-		ptr->up_down -= 50;
+		ptr->offset_y += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
 	if (keycode == 65364) // 125
 	{
-		ptr->up_down += 50;
+		ptr->offset_y -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
