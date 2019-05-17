@@ -25,7 +25,7 @@ void	display_tab(t_point **tab, t_fdf *ptr)
 	}
 }
 
-t_point	**fill_tab(char *filename, t_fdf *ptr)
+void	fill_tab(char *filename, t_fdf *ptr)
 {
 	int	i;
 	int j;

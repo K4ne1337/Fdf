@@ -4,8 +4,11 @@ int	ft_fdf(char *filename)
 {
 	t_fdf	*ptr;
 
+	ptr = NULL;
 	if(!(ptr = (t_fdf*)malloc(sizeof(t_fdf))))
 		return (0);
+	ptr->nb_line = 0;
+	ptr->nb_col = 0;
 	read_file(filename,ptr);
 	ptr->res_width = 800;
 	ptr->res_height = 600;
@@ -17,4 +20,5 @@ int	ft_fdf(char *filename)
 	ptr->high = 2;
 	fill_tab(filename, ptr);
 	ft_init_window(ptr);
+	return (0);
 }

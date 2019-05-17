@@ -40,8 +40,8 @@ typedef struct s_fdf
 	void	*mlx_ptr;
 }				t_fdf;
 
-int	read_file(char *filename, t_fdf *ptr);
+int		read_file(char *filename, t_fdf *ptr);
 int		get_len(char *line);
-t_point	**fill_tab(char *filename, t_fdf *ptr);
+void	fill_tab(char *filename, t_fdf *ptr);
 
 #endif

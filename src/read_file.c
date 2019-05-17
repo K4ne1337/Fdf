@@ -14,6 +14,7 @@ int	get_len(char *line)
 int	read_file(char *filename, t_fdf *ptr)
 {
 	ptr->fd = open(filename, O_RDONLY);
+
 	while (get_next_line(ptr->fd, &ptr->line))
 	{
 		ptr->nb_line++;

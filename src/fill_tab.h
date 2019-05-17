@@ -5,7 +5,7 @@
 #include "read_file.h"
 #include "get_next_line.h"
 
-t_point	**fill_tab(char *filename, t_fdf *ptr);
+void	fill_tab(char *filename, t_fdf *ptr);
 void	display_tab(t_point **tab, t_fdf *ptr);
 
 #endif

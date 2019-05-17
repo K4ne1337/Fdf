@@ -1,4 +1,5 @@
 #include "ft_init.h"
+
 void	draw_line(t_fdf *ptr, t_point a, t_point b)
 {
 	int dx;
@@ -55,8 +56,6 @@ void	testprint(t_fdf *ptr)
 	int color;
 	int i;
 	int	j;
-	int	dx;
-	int dy;
 
 	color = 0x8b0000;
 	j = 0;
@@ -98,10 +97,10 @@ int		key_function_part_1(int keycode, t_fdf *ptr)
 
 	str = ft_strdup("\nTUTO\n\nR : red\nG : green\nB : blue\n\
 	W : white\narrows : moove\n+ : higher\n- : lower\n");
-	if (keycode == 115) //1 S
+	if (keycode == 1) //115 S
 		ft_putendl(str);
 	free(str);
-	if (keycode == 112) // 35 P
+	if (keycode == 35) // 112 P
 	{
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		if(ptr->current_proj == ISOMETRIC_PROJECTION)
@@ -121,7 +120,7 @@ int		key_function_part_1(int keycode, t_fdf *ptr)
 
 int		key_function_part_2(int keycode, t_fdf *ptr)
 {
-	if (keycode == 65451) // 69
+	if (keycode == 69) // 65451
 	{
 		ptr->high += 5;
 		set_high(ptr);
@@ -129,7 +128,7 @@ int		key_function_part_2(int keycode, t_fdf *ptr)
 		ft_switch_iso(ptr);
 		testprint(ptr);
 	}
-	if (keycode == 65453) // 78
+	if (keycode == 78) // 65453
 	{
 		ptr->high -= 5;
 		set_high(ptr);
@@ -137,7 +136,7 @@ int		key_function_part_2(int keycode, t_fdf *ptr)
 		ft_switch_iso(ptr);
 		testprint(ptr);
 	}
-	if (keycode == 65307) // 53 ESC
+	if (keycode == 53) // 65307 ESC
 	{
 		free(ptr);
 		exit(0);
@@ -153,6 +152,7 @@ int key_function(int keycode, t_fdf *ptr)
 	set_color(keycode, ptr);
 	set_offset_x(keycode, ptr);
 	set_offset_y(keycode, ptr);
+	return (0);
 }
 
 void	ft_init_window(t_fdf *ptr)
@@ -164,7 +164,6 @@ void	ft_init_window(t_fdf *ptr)
 		ft_switch_iso(ptr);
 	else if(ptr->current_proj == PARALLEL_PROJECTION)
 		set_proj(ptr);
-
 	testprint(ptr);
 	mlx_key_hook(ptr->win_ptr, key_function, ptr);
 	mlx_loop(ptr->mlx_ptr);

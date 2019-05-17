@@ -39,22 +39,22 @@ void	set_high(t_fdf *ptr)
 
 void	set_color(int keycode, t_fdf *ptr)
 {
-	if (keycode == 114) // 15
+	if (keycode == 15) // 114
 	{
 		ptr->color = 0x00FF0000;
 		testprint(ptr);
 	}
-	if (keycode == 103) // 5
+	if (keycode == 5) // 103
 	{
 		ptr->color = 0x0000FF00;
 		testprint(ptr);
 	}
-	if (keycode == 98) // 11
+	if (keycode == 11) // 98
 	{
 		ptr->color = 0x000000FF;
 		testprint(ptr);
 	}
-	if (keycode == 119) // 13
+	if (keycode == 13) // 119
 	{
 		ptr->color = 0x00FFFFFF;
 		testprint(ptr);
@@ -63,13 +63,13 @@ void	set_color(int keycode, t_fdf *ptr)
 
 void	set_offset_x(int keycode, t_fdf *ptr)
 {
-	if (keycode == 65361) //123
+	if (keycode == 123) // 65361
 	{
 		ptr->offset_x += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
-	if (keycode == 65363) // 124
+	if (keycode == 124) // 65363
 	{
 		ptr->offset_x -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
@@ -79,13 +79,13 @@ void	set_offset_x(int keycode, t_fdf *ptr)
 
 void	set_offset_y(int keycode, t_fdf *ptr)
 {
-	if (keycode == 65362) //126
+	if (keycode == 126) // 65362
 	{
 		ptr->offset_y += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
-	if (keycode == 65364) // 125
+	if (keycode == 125) // 65364
 	{
 		ptr->offset_y -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
