@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
+/*   Updated: 2019/05/21 00:18:17 by abelkhay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 int	ft_fdf(char *filename)
@@ -5,11 +17,11 @@ int	ft_fdf(char *filename)
 	t_fdf	*ptr;
 
 	ptr = NULL;
-	if(!(ptr = (t_fdf*)malloc(sizeof(t_fdf))))
+	if (!(ptr = (t_fdf*)malloc(sizeof(t_fdf))))
 		return (0);
 	ptr->nb_line = 0;
 	ptr->nb_col = 0;
-	read_file(filename,ptr);
+	read_file(filename, ptr);
 	ptr->res_width = 800;
 	ptr->res_height = 600;
 	ptr->offset_x = 200;

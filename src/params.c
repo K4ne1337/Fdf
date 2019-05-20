@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   params.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
+/*   Updated: 2019/05/17 18:42:15 by amarcel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "params.h"
 
 void	set_proj(t_fdf *ptr)
 {
 	size_t	i;
-	size_t 	j;
+	size_t	j;
 
 	j = 0;
 	while (j < ptr->nb_line)
@@ -39,22 +51,22 @@ void	set_high(t_fdf *ptr)
 
 void	set_color(int keycode, t_fdf *ptr)
 {
-	if (keycode == 15) // 114
+	if (keycode == 15)
 	{
 		ptr->color = 0x00FF0000;
 		testprint(ptr);
 	}
-	if (keycode == 5) // 103
+	if (keycode == 5)
 	{
 		ptr->color = 0x0000FF00;
 		testprint(ptr);
 	}
-	if (keycode == 11) // 98
+	if (keycode == 11)
 	{
 		ptr->color = 0x000000FF;
 		testprint(ptr);
 	}
-	if (keycode == 13) // 119
+	if (keycode == 13)
 	{
 		ptr->color = 0x00FFFFFF;
 		testprint(ptr);
@@ -63,13 +75,13 @@ void	set_color(int keycode, t_fdf *ptr)
 
 void	set_offset_x(int keycode, t_fdf *ptr)
 {
-	if (keycode == 123) // 65361
+	if (keycode == 123)
 	{
 		ptr->offset_x += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
-	if (keycode == 124) // 65363
+	if (keycode == 124)
 	{
 		ptr->offset_x -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
@@ -79,13 +91,13 @@ void	set_offset_x(int keycode, t_fdf *ptr)
 
 void	set_offset_y(int keycode, t_fdf *ptr)
 {
-	if (keycode == 126) // 65362
+	if (keycode == 126)
 	{
 		ptr->offset_y += 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		testprint(ptr);
 	}
-	if (keycode == 125) // 65364
+	if (keycode == 125)
 	{
 		ptr->offset_y -= 50;
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);

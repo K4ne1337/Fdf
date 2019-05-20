@@ -1,51 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   draw_lines.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 00:30:10 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 00:17:05 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "read_file.h"
+#	ifndef DRAW_LINES_H
+#	define DRAW_LINES_H
 
-int		get_len(char *line)
-{
-	char	**sstr;
-	t_fdf	tmp;
+#include "../libft/libft.h"
+#include "ft_init.h"
 
-	sstr = ft_strsplit(line, ' ');
-	tmp.nb_col = ft_sstrlen(sstr);
-	freetab(sstr);
-	return (tmp.nb_col);
-}
+void	draw_line(t_fdf *ptr, t_point a, t_point b);
+void	draw_lines(t_fdf *ptr, int i, int j);
+void	testprint(t_fdf *ptr);
+void	switch_proj(t_fdf *ptr);
 
-int		read_file(char *filename, t_fdf *ptr)
-{
-	ptr->fd = open(filename, O_RDONLY);
-	while (get_next_line(ptr->fd, &ptr->line))
-	{
-		ptr->nb_line++;
-		ptr->nb_col = get_len(ptr->line);
-		free(ptr->line);
-	}
-	free(ptr->line);
-	close(ptr->fd);
-	return (0);
-}
-
-void	freetab(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-}
+#	endif
