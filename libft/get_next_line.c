@@ -6,7 +6,7 @@
 /*   By: abelkhay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/21 10:49:43 by abelkhay          #+#    #+#             */
-/*   Updated: 2019/03/19 15:48:36 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 19:51:36 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,20 @@ static char	*endstr(char *str)
 	return (ret);
 }
 
+static int	nul_report(char *str)
+{
+	int nul;
+
+	nul = 0;
+	if (ft_strchr(str, '\0') != NULL)
+	{
+		nul++;
+		if (nul > 1000)
+			return (-1);
+	}
+	return (0);
+}
+
 static int	readline(char **str, int fd)
 {
 	char	buffer[BUFF_SIZE + 1];
@@ -63,6 +77,8 @@ static int	readline(char **str, int fd)
 		free(tempo);
 		if (ft_strchr(*str, '\n') != NULL)
 			flag++;
+		if (!(nul_report(*str)))
+			return (-1);
 	}
 	return (ret);
 }

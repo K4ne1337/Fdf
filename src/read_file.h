@@ -51,5 +51,6 @@ int				read_file(char *filename, t_fdf *ptr);
 int				get_len(char *line);
 void			fill_tab(char *filename, t_fdf *ptr);
 void			freetab(char **str);
+void			ft_error(t_fdf *ptr);
 
 #	endif
