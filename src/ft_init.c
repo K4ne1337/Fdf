@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 16:28:44 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 17:19:46 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,16 @@ t_point		**ft_switch_iso(t_fdf *ptr)
 	return (ptr->tab);
 }
 
-void		ft_init_window(t_fdf *ptr)
+int			ft_init_window(t_fdf *ptr)
 {
-	ptr->mlx_ptr = mlx_init();
-	ptr->win_ptr = mlx_new_window(ptr->mlx_ptr, ptr->res_width\
-	, ptr->res_height, "fdf");
+	if (!(ptr->mlx_ptr = mlx_init()))
+		return (-1);
+	if (!(ptr->win_ptr = mlx_new_window(ptr->mlx_ptr, ptr->res_width\
+	, ptr->res_height, "fdf")))
+		return (-1);
 	switch_proj(ptr);
 	testprint(ptr);
 	mlx_key_hook(ptr->win_ptr, key_function, ptr);
 	mlx_loop(ptr->mlx_ptr);
+	return (0);
 }

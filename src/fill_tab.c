@@ -12,29 +12,6 @@
 
 #include "fill_tab.h"
 
-void	display_tab(t_point **tab, t_fdf *ptr)
-{
-	int j;
-	int i;
-
-	j = 0;
-	while (j < ptr->nb_line)
-	{
-		i = 0;
-		while (i < ptr->nb_col)
-		{
-			ft_putnbr(tab[j][i].z);
-			if (tab[j][i].z < 10)
-				ft_putstr("  ");
-			else
-				ft_putchar(' ');
-			i++;
-		}
-		ft_putchar('\n');
-		j++;
-	}
-}
-
 void	fill_tab(char *filename, t_fdf *ptr)
 {
 	int		i;

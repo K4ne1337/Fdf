@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 16:32:59 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 17:20:00 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include "draw_lines.h"
 #include "key_function.h"
 
-void	ft_init_window(t_fdf *ptr);
+int		ft_init_window(t_fdf *ptr);
 void	set_proj(t_fdf *ptr);
 t_point	**ft_switch_iso(t_fdf *ptr);
 

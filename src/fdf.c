@@ -31,6 +31,7 @@ int	ft_fdf(char *filename)
 	ptr->size = ptr->res_width / (ptr->nb_col + ptr->nb_line);
 	ptr->high = 2;
 	fill_tab(filename, ptr);
-	ft_init_window(ptr);
+	if (!(ft_init_window(ptr)))
+		return (-1);
 	return (0);
 }

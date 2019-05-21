@@ -29,5 +29,6 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_fdf(argv[1]);
+	close(fd);
 	return (0);
 }
