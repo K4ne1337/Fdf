@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/17 18:42:15 by amarcel          ###   ########.fr       */
+/*   Updated: 2019/05/21 16:41:58 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	main(int argc, char **argv)
 	int fd;
 
 	if (argc != 2)
+	{
 		ft_putendl("Usage : ./fdf File");
+		return (-1);
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{

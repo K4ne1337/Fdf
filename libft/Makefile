@@ -6,7 +6,7 @@
 #    By: amarcel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 10:44:54 by amarcel           #+#    #+#              #
-#    Updated: 2019/02/19 15:07:24 by abelkhay         ###   ########.fr        #
+#    Updated: 2019/05/21 01:17:16 by abelkhay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ SRC = ft_atoi.c\
 	  ft_strrev.c\
 	  ft_intlen.c\
 	  ft_strupcase.c\
-	  ft_sstrlen.c
+	  ft_sstrlen.c\
+	  get_next_line.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)

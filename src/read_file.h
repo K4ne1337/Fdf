@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/17 19:14:29 by amarcel          ###   ########.fr       */
+/*   Updated: 2019/05/21 01:20:58 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #define ISOMETRIC_PROJECTION 0
 #define PARALLEL_PROJECTION 1
-#include <stdio.h>
-#include "get_next_line.h"
 #include "../libft/libft.h"
 
 typedef struct	s_point

@@ -6,35 +6,35 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/17 18:42:15 by amarcel          ###   ########.fr       */
+/*   Updated: 2019/05/21 16:35:40 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "params.h"
 
-void	set_proj(t_fdf *ptr)
+void	set_size(t_fdf *ptr)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
-	j = 0;
-	while (j < ptr->nb_line)
+	i = 0;
+	while (i < ptr->nb_line)
 	{
-		i = 0;
-		while (i < ptr->nb_col)
+		j = 0;
+		while (j < ptr->nb_col)
 		{
-			ptr->tab[j][i].x2 = ptr->tab[j][i].x + 0.35 * ptr->tab[j][i].y;
-			ptr->tab[j][i].y2 = ptr->tab[j][i].z - 0.35 * ptr->tab[j][i].y;
-			i++;
+			ptr->tab[i][j].x = j * ptr->size;
+			ptr->tab[i][j].y = i * ptr->size;
+			j++;
 		}
-		j++;
+		i++;
 	}
 }
 
 void	set_high(t_fdf *ptr)
 {
-	size_t i;
-	size_t j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < ptr->nb_line)

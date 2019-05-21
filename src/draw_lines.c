@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 00:15:57 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 16:53:38 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,11 @@ void	draw_lines(t_fdf *ptr, int i, int j)
 
 void	testprint(t_fdf *ptr)
 {
-	int	color;
 	int	i;
 	int	j;
 
-	color = 0x8b0000;
 	j = 0;
+	print_menu(ptr);
 	while (j < ptr->nb_line)
 	{
 		i = 0;
@@ -88,4 +87,22 @@ void	switch_proj(t_fdf *ptr)
 		ft_switch_iso(ptr);
 	else if (ptr->current_proj == PARALLEL_PROJECTION)
 		set_proj(ptr);
+}
+
+void	print_menu(t_fdf *ptr)
+{
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 10\
+			, 0x0000FF00, "R-G-B-W : colors");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 30\
+			, 0x0000FF00, "P : switch projection");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 50\
+			, 0x0000FF00, "+ : high");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 70\
+			, 0x0000FF00, "- : low");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 90\
+			, 0x0000FF00, "arrows : moove");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 110\
+			, 0x0000FF00, "page up : zoom");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 130\
+			, 0x0000FF00, "page down : dezoom");
 }

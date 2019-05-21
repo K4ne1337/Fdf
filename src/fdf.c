@@ -22,8 +22,8 @@ int	ft_fdf(char *filename)
 	ptr->nb_line = 0;
 	ptr->nb_col = 0;
 	read_file(filename, ptr);
-	ptr->res_width = 800;
-	ptr->res_height = 600;
+	ptr->res_width = 1280;
+	ptr->res_height = 960;
 	ptr->offset_x = 200;
 	ptr->offset_y = 150;
 	ptr->color = 0x00FFFFFF;

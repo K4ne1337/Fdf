@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 16:05:42 by amarcel           #+#    #+#             */
-/*   Updated: 2019/03/18 16:48:39 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/21 01:16:52 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "get_next_line.h"
 
 typedef struct		s_list
 {
