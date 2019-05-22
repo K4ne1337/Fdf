@@ -12,6 +12,19 @@
 
 #include "fdf.h"
 
+void    errors(int i)
+{
+    if (i == 0)
+        ft_putendl("invalid values");
+    else if(i == 1)
+        ft_putendl("incorrect file");
+    else if(i == 2)
+        ft_putendl("Usage : ./fdf File");
+    else if(i == 3)
+        ft_putendl("Bad usage or file does not exist");
+    exit(0);
+}
+
 int	ft_fdf(char *filename)
 {
 	t_fdf	*ptr;
@@ -24,7 +37,7 @@ int	ft_fdf(char *filename)
 	read_file(filename, ptr);
 	ptr->res_width = 1280;
 	ptr->res_height = 960;
-	ptr->offset_x = 200;
+	ptr->offset_x = 400;
 	ptr->offset_y = 150;
 	ptr->color = 0x00FFFFFF;
 	ptr->current_proj = PARALLEL_PROJECTION;

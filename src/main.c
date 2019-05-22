@@ -17,16 +17,10 @@ int	main(int argc, char **argv)
 	int fd;
 
 	if (argc != 2)
-	{
-		ft_putendl("Usage : ./fdf File");
-		return (-1);
-	}
+		errors(2);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-	{
-		ft_putendl("Bad usage or file does not exist");
-		return (-1);
-	}
+		errors(3);
 	else
 		ft_fdf(argv[1]);
 	close(fd);

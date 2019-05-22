@@ -18,7 +18,7 @@
 
 void	draw_line(t_fdf *ptr, t_point a, t_point b);
 void	draw_lines(t_fdf *ptr, int i, int j);
-void	testprint(t_fdf *ptr);
+void	ft_print_map(t_fdf *ptr);
 void	switch_proj(t_fdf *ptr);
 void	print_menu(t_fdf *ptr);
 

@@ -24,32 +24,23 @@ int		get_len(char *line)
 	return (tmp.nb_col);
 }
 
-int		read_file(char *filename, t_fdf *ptr)
+int        read_file(char *filename, t_fdf *ptr)
 {
-	int test;
-
-	test = 0;
-	ptr->fd = open(filename, O_RDONLY);
-	while (get_next_line(ptr->fd, &ptr->line))
-	{
-		ptr->nb_line++;
-		if (!ptr->line)
-		{
-			ft_putendl("incorrect file");
-			exit(0);
-		}
-		ptr->nb_col = get_len(ptr->line);
-		ft_error(ptr);
-		free(ptr->line);
-	}
-	if (!ptr->line)
-	{
-		ft_putendl("incorrect file");
-		exit(0);
-	}
-	free(ptr->line);
-	close(ptr->fd);
-	return (0);
+    ptr->fd = open(filename, O_RDONLY);
+    while (get_next_line(ptr->fd, &ptr->line))
+    {
+        ptr->nb_line++;
+        if (!ptr->line)
+            errors(1);
+        ptr->nb_col = get_len(ptr->line);
+        ft_error(ptr);
+        free(ptr->line);
+    }
+    if (!ptr->line)
+        errors(1);
+    free(ptr->line);
+    close(ptr->fd);
+    return (0);
 }
 
 void	freetab(char **str)
@@ -65,31 +56,16 @@ void	freetab(char **str)
 	free(str);
 }
 
-void	ft_error(t_fdf *ptr)
+void    ft_error(t_fdf *ptr)
 {
-	int i;
+    int i;
 
-	i = 0;
-	while (i <= get_len(ptr->line))
-	{
-		if (!((ptr->line[i] >= '0' && ptr->line[i] <= '9') || ptr->line[i]\
-					== '-' || ptr->line[i] == ' '))
-		{
-			if (ptr->line[i] == ',' && ptr->line[i + 1]\
-					== '0' && ptr->line[i + 2] == 'x')
-			{
-				i = i + 2;
-				while ((ptr->line[i] >= 'A' && ptr->line[i]\
-							<= 'Z') || (ptr->line[i] >= 'A' && ptr->line[i]\
-								<= 'Z'))
-					i++;
-			}
-			else
-			{
-				ft_putendl("incorrect file");
-				exit(0);
-			}
-		}
-		i++;
-	}
+    i = 0;
+    while (i < get_len(ptr->line))
+    {
+        if (!((ptr->line[i] >= '0' && ptr->line[i] <= '9') || ptr->line[i]\
+                    == '-' || ptr->line[i] == ' '))
+			errors(0);
+        i++;
+    }
 }

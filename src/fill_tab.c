@@ -14,29 +14,29 @@
 
 void	fill_tab(char *filename, t_fdf *ptr)
 {
-	int		i;
-	int		j;
-	char	**sstr;
+	int i;
+	int j;
 
-	i = 0;
+	i = -1;
 	ptr->tab = (t_point **)malloc(sizeof(t_point *) * ptr->nb_line);
 	ptr->fd = open(filename, O_RDONLY);
 	while ((ptr->ret = get_next_line(ptr->fd, &ptr->line)) > 0)
 	{
-		sstr = ft_strsplit(ptr->line, ' ');
-		ptr->tab[i] = (t_point *)malloc(sizeof(t_point) * ptr->nb_col);
+		ptr->sstr = ft_strsplit(ptr->line, ' ');
+		ptr->tab[++i] = (t_point *)malloc(sizeof(t_point) * ptr->nb_col);
 		j = -1;
-		while (sstr[++j])
+		while (ptr->sstr[++j])
 		{
 			ptr->tab[i][j].x = j * ptr->size;
 			ptr->tab[i][j].y = i * ptr->size;
-			ptr->tab[i][j].z0 = ft_atoi(sstr[j]);
-			ptr->tab[i][j].z = ft_atoi(sstr[j]) * ptr->high;
-			free(sstr[j]);
+			ptr->tab[i][j].z0 = ft_atoi(ptr->sstr[j]);
+			if(ft_strlen(ptr->sstr[j]) >= 9)
+                errors(0);
+			ptr->tab[i][j].z = ft_atoi(ptr->sstr[j]) * ptr->high;
+			free(ptr->sstr[j]);
 		}
 		free(ptr->line);
-		free(sstr);
-		i++;
+		free(ptr->sstr);
 	}
 	free(ptr->line);
 }

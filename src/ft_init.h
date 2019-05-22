@@ -23,7 +23,7 @@
 #include "key_function.h"
 
 int		ft_init_window(t_fdf *ptr);
-void	set_proj(t_fdf *ptr);
+void	ft_switch_para(t_fdf *ptr);
 t_point	**ft_switch_iso(t_fdf *ptr);
 
 #	endif

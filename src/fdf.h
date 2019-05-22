@@ -16,6 +16,7 @@
 #include "../libft/libft.h"
 #include "read_file.h"
 
+void    errors(int i);
 int		ft_fdf(char *filename);
 int		ft_init_window(t_fdf *ptr);
 

@@ -12,7 +12,7 @@
 
 #include "ft_init.h"
 
-void		set_proj(t_fdf *ptr)
+void		ft_switch_para(t_fdf *ptr)
 {
 	int	i;
 	int	j;
@@ -61,7 +61,7 @@ int			ft_init_window(t_fdf *ptr)
 	, ptr->res_height, "fdf")))
 		return (-1);
 	switch_proj(ptr);
-	testprint(ptr);
+	ft_print_map(ptr);
 	mlx_key_hook(ptr->win_ptr, key_function, ptr);
 	mlx_loop(ptr->mlx_ptr);
 	return (0);

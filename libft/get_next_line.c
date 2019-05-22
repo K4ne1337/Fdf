@@ -41,20 +41,6 @@ static char	*endstr(char *str)
 	return (ret);
 }
 
-static int	nul_report(char *str)
-{
-	int nul;
-
-	nul = 0;
-	if (ft_strchr(str, '\0') != NULL)
-	{
-		nul++;
-		if (nul > 1000)
-			return (-1);
-	}
-	return (0);
-}
-
 static int	readline(char **str, int fd)
 {
 	char	buffer[BUFF_SIZE + 1];
@@ -74,11 +60,11 @@ static int	readline(char **str, int fd)
 			*str = ft_strdup(buffer);
 		else
 			*str = ft_strjoin(*str, buffer);
+		if (ft_strlen(*str) == 0)
+			return (-1);
 		free(tempo);
 		if (ft_strchr(*str, '\n') != NULL)
 			flag++;
-		if (!(nul_report(*str)))
-			return (-1);
 	}
 	return (ret);
 }

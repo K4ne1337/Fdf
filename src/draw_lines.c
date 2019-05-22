@@ -14,8 +14,8 @@
 
 void	draw_line(t_fdf *ptr, t_point a, t_point b)
 {
-	int	dx;
-	int	dy;
+	int dx;
+	int dy;
 	int	s[2];
 	int	err[2];
 
@@ -62,7 +62,7 @@ void	draw_lines(t_fdf *ptr, int i, int j)
 	}
 }
 
-void	testprint(t_fdf *ptr)
+void	ft_print_map(t_fdf *ptr)
 {
 	int	i;
 	int	j;
@@ -86,7 +86,7 @@ void	switch_proj(t_fdf *ptr)
 	if (ptr->current_proj == ISOMETRIC_PROJECTION)
 		ft_switch_iso(ptr);
 	else if (ptr->current_proj == PARALLEL_PROJECTION)
-		set_proj(ptr);
+		ft_switch_para(ptr);
 }
 
 void	print_menu(t_fdf *ptr)
@@ -96,13 +96,15 @@ void	print_menu(t_fdf *ptr)
 	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 30\
 			, 0x0000FF00, "P : switch projection");
 	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 50\
-			, 0x0000FF00, "+ : high");
-	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 70\
-			, 0x0000FF00, "- : low");
-	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 90\
 			, 0x0000FF00, "arrows : moove");
-	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 110\
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 70\
 			, 0x0000FF00, "page up : zoom");
-	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 130\
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 90\
 			, 0x0000FF00, "page down : dezoom");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 110\
+			, 0x0000FF00, "+ : high");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 130\
+			, 0x0000FF00, "- : low");
+	mlx_string_put(ptr->mlx_ptr, ptr->win_ptr, 10, 150\
+            , 0x00FF0000, "ESC to quit");
 }

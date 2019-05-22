@@ -15,6 +15,7 @@
 
 #include "../libft/libft.h"
 #include "read_file.h"
+#include "fdf.h"
 
 void	fill_tab(char *filename, t_fdf *ptr);
 

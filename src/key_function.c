@@ -19,7 +19,7 @@ int			key_function_part_1(int keycode, t_fdf *ptr)
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		if (ptr->current_proj == ISOMETRIC_PROJECTION)
 		{
-			set_proj(ptr);
+			ft_switch_para(ptr);
 			ptr->current_proj = PARALLEL_PROJECTION;
 		}
 		else if (ptr->current_proj == PARALLEL_PROJECTION)
@@ -27,7 +27,7 @@ int			key_function_part_1(int keycode, t_fdf *ptr)
 			ft_switch_iso(ptr);
 			ptr->current_proj = ISOMETRIC_PROJECTION;
 		}
-		testprint(ptr);
+		ft_print_map(ptr);
 	}
 	return (0);
 }
@@ -40,7 +40,7 @@ int			key_function_part_2(int keycode, t_fdf *ptr)
 		set_high(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		switch_proj(ptr);
-		testprint(ptr);
+		ft_print_map(ptr);
 	}
 	if (keycode == 78)
 	{
@@ -48,7 +48,7 @@ int			key_function_part_2(int keycode, t_fdf *ptr)
 		set_high(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		switch_proj(ptr);
-		testprint(ptr);
+		ft_print_map(ptr);
 	}
 	if (keycode == 53)
 	{
@@ -66,7 +66,7 @@ int			mouse_function(int keycode, t_fdf *ptr)
 		set_size(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		switch_proj(ptr);
-		testprint(ptr);
+		ft_print_map(ptr);
 	}
 	if (keycode == 116)
 	{
@@ -74,7 +74,7 @@ int			mouse_function(int keycode, t_fdf *ptr)
 		set_size(ptr);
 		mlx_clear_window(ptr->mlx_ptr, ptr->win_ptr);
 		switch_proj(ptr);
-		testprint(ptr);
+		ft_print_map(ptr);
 	}
 	return (0);
 }

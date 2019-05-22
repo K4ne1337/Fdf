@@ -30,6 +30,7 @@ typedef struct	s_point
 typedef struct	s_fdf
 {
 	t_point	**tab;
+	char	**sstr;
 	int		color;
 	int		fd;
 	int		ret;
