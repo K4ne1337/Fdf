@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 17:19:46 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:29:21 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		ft_switch_para(t_fdf *ptr)
 	}
 }
 
-t_point		**ft_switch_iso(t_fdf *ptr)
+void		ft_switch_iso(t_fdf *ptr)
 {
 	int i;
 	int j;
@@ -50,7 +50,6 @@ t_point		**ft_switch_iso(t_fdf *ptr)
 		}
 		j++;
 	}
-	return (ptr->tab);
 }
 
 int			ft_init_window(t_fdf *ptr)

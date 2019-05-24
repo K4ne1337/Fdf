@@ -6,7 +6,7 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 00:22:26 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:27:17 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	fill_tab(char *filename, t_fdf *ptr)
 			ptr->tab[i][j].x = j * ptr->size;
 			ptr->tab[i][j].y = i * ptr->size;
 			ptr->tab[i][j].z0 = ft_atoi(ptr->sstr[j]);
-			if(ft_strlen(ptr->sstr[j]) >= 9)
-                errors(0);
+			if (ft_strlen(ptr->sstr[j]) >= 9)
+				errors(0);
 			ptr->tab[i][j].z = ft_atoi(ptr->sstr[j]) * ptr->high;
 			free(ptr->sstr[j]);
 		}

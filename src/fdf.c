@@ -6,26 +6,26 @@
 /*   By: amarcel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 18:42:11 by amarcel           #+#    #+#             */
-/*   Updated: 2019/05/21 00:18:17 by abelkhay         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:26:38 by abelkhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void    errors(int i)
+void	errors(int i)
 {
-    if (i == 0)
-        ft_putendl("invalid values");
-    else if(i == 1)
-        ft_putendl("incorrect file");
-    else if(i == 2)
-        ft_putendl("Usage : ./fdf File");
-    else if(i == 3)
-        ft_putendl("Bad usage or file does not exist");
-    exit(0);
+	if (i == 0)
+		ft_putendl("invalid values");
+	else if (i == 1)
+		ft_putendl("incorrect file");
+	else if (i == 2)
+		ft_putendl("Usage : ./fdf File");
+	else if (i == 3)
+		ft_putendl("Bad usage or file does not exist");
+	exit(0);
 }
 
-int	ft_fdf(char *filename)
+int		ft_fdf(char *filename)
 {
 	t_fdf	*ptr;
 
